@@ -1,0 +1,26 @@
+package BasicSyntax.DataTypesAndVariablesLab;
+
+import java.util.Scanner;
+
+public class PokeMon {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        int power = Integer.parseInt(scanner.nextLine());
+        int powerSafe = power;
+        int distance = Integer.parseInt(scanner.nextLine());
+        int exhaustionFactor = Integer.parseInt(scanner.nextLine());
+        int pinch = 0;
+        int totalLeftPower = 0;
+
+        while (power >= distance) {
+            power = power-distance;
+            pinch++;
+            if ((power==(powerSafe/2))&&(exhaustionFactor!=0)){
+                power/=exhaustionFactor;
+            }
+        }
+        System.out.println(power);
+        System.out.println(pinch);
+    }
+}
