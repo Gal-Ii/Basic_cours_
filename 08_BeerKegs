@@ -1,0 +1,23 @@
+
+        int n = Integer.parseInt(scanner.nextLine());
+
+        double volume = 0;
+        double maxVolume = Double.MIN_VALUE;
+        String maxModel = "";
+
+
+        for (int i = 1; i <= n; i++) {
+            String model = scanner.nextLine();
+            double radius = Double.parseDouble(scanner.nextLine());
+            int height = Integer.parseInt(scanner.nextLine());
+            volume = Math.PI * Math.pow(radius, 2) * height;
+
+
+            if (volume > maxVolume) {
+                maxVolume = volume;
+                maxModel = model;
+            }
+        }
+        System.out.println(maxModel);
+    }
+}
