@@ -1,0 +1,39 @@
+package BasicSyntax.DataTypesAndVariablesLab;
+
+import java.util.Scanner;
+
+public class Snowballs {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+
+        int n = Integer.parseInt(scanner.nextLine());
+
+        double snowballValue = 0;
+        double maxVolume = Double.MIN_VALUE;
+        int snowballSnow = 0;
+        int snowballTime = 0;
+        int snowballQuality = 0;
+        int snowballBigSnow = 0;
+        int snowballBigTime = 0;
+        int snowballBigQuality = 0;
+
+        for (int i = 1; i <= n; i++) {
+            snowballSnow = Integer.parseInt(scanner.nextLine());
+            snowballTime = Integer.parseInt(scanner.nextLine());
+            snowballQuality = Integer.parseInt(scanner.nextLine());
+            int snowballMiddleValue = snowballSnow / snowballTime;
+            snowballValue = Math.pow(snowballMiddleValue, snowballQuality);
+
+            if (snowballValue > maxVolume) {
+                maxVolume = snowballValue;
+                snowballBigSnow = snowballSnow;
+                snowballBigTime = snowballTime;
+                snowballBigQuality = snowballQuality;
+            }
+        }
+        System.out.printf("%d : %d = %.0f (%d)",
+                snowballBigSnow, snowballBigTime, maxVolume, snowballBigQuality);
+
+    }
+}
